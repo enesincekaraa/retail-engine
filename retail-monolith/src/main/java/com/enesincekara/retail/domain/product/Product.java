@@ -4,11 +4,11 @@ import com.enesincekara.retail.domain.shared.DomainException;
 import com.enesincekara.retail.domain.shared.Money;
 
 public class Product {
-    private String id;
+    private ProductId id;
     private String name;
     private Money price;
 
-    public Product(String id, String name, Money price) {
+    public Product(ProductId id, String name, Money price) {
         if (name == null||name.isBlank()) {
             throw new DomainException("Product name cannot be null or empty");
         }
@@ -22,7 +22,7 @@ public class Product {
         }
         this.price = newPrice;
     }
-    public String getId() {
+    public ProductId getId() {
         return id;
     }
     public String getName() {
