@@ -8,7 +8,7 @@ public class Product {
     private String name;
     private Money price;
 
-    public Product(ProductId id, String name, Money price) {
+    private Product(ProductId id, String name, Money price) {
         if (name == null||name.isBlank()) {
             throw new DomainException("Product name cannot be null or empty");
         }
@@ -16,6 +16,15 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+
+    public static Product create(String name, Money price) {
+        if (name == null||name.isBlank()) {
+            throw new DomainException("Product name cannot be null or empty");
+        }
+        ProductId id = ProductId.newId();
+        return new Product(id, name, price);
+    }
+
     public void changedPrice(Money newPrice) {
         if (newPrice == null) {
             throw new DomainException("Price cannot be null");
