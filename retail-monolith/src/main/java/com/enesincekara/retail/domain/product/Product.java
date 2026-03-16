@@ -8,7 +8,7 @@ public class Product {
     private String name;
     private Money price;
 
-    private Product(ProductId id, String name, Money price) {
+    public Product(ProductId id, String name, Money price) {
         if (name == null||name.isBlank()) {
             throw new DomainException("Product name cannot be null or empty");
         }
