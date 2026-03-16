@@ -16,3 +16,7 @@ spring:
 
   flyway:
     enabled: true
+
+logging:
+  level:
+    org.springframework.cache: trace
