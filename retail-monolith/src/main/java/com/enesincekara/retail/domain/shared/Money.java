@@ -1,9 +1,10 @@
 package com.enesincekara.retail.domain.shared;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Money {
+public class Money implements Serializable {
 
     private final BigDecimal amount;
     private final String currency;
