@@ -3,7 +3,9 @@ package com.enesincekara.retail.domain.product;
 import com.enesincekara.retail.domain.shared.DomainException;
 import com.enesincekara.retail.domain.shared.Money;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private ProductId id;
     private String name;
     private Money price;

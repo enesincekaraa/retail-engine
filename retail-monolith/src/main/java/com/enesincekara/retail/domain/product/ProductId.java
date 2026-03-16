@@ -3,7 +3,7 @@ package com.enesincekara.retail.domain.product;
 import java.util.Objects;
 import java.util.UUID;
 
-public class ProductId {
+public class ProductId implements java.io.Serializable {
     private final String value;
 
     private ProductId(String value) {
