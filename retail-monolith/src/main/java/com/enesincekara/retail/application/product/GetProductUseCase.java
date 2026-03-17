@@ -13,7 +13,7 @@ public class GetProductUseCase {
         this.productRepository = productRepository;
     }
 
-    @Cacheable(value = "products", key = "#id")
+    @Cacheable(value = "products", key = "#id",unless = "#result == null")
     public Product execute(String id) {
         return productRepository.findById(ProductId.of(id))
                 .orElseThrow(

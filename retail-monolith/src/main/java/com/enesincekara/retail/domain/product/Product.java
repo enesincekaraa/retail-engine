@@ -42,4 +42,12 @@ public class Product implements Serializable {
     public Money getPrice() {
         return price;
     }
+
+    public void update(String name, Money aTry) {
+        if (name == null||name.isBlank()) {
+            throw new DomainException("Product name cannot be null or empty");
+        }
+        this.name = name;
+        this.price = aTry;
+    }
 }
